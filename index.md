@@ -38,10 +38,12 @@ Configurable systems developed in C use #ifdef directives to deal with variabili
 
 ### MODEL TO BUILD TEH CONFIGURABLE SYSTEMS
 
+We create a model to compile the configurable systems using the CFLAGS and CPPFLAGS variables according to the definitions below:
+
 ##### Expat
 Always enabled:
 
-MACROS ALWAYS DISABLED:
+Always disabled:
 
 ##### Git
 Always enabled:
