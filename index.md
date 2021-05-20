@@ -6,6 +6,13 @@ Configurable systems developed in C use #ifdef directives to deal with variabili
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
+Here's an image of a drag racer in action:
+
+![Drag Racing](technique.jpg)
+
+Move along.
+
+
 ```markdown
 Syntax highlighted code block
 
