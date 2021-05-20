@@ -8,7 +8,7 @@ Configurable systems developed in C use #ifdef directives to deal with variabili
 
 ![Drag Racing](technique.jpeg)
 
-#### Pull requests
+### PULL REQUESTS
 
 | Project        | Status   | Weaknesses  |
 |----------------|----------|------------ |
@@ -26,7 +26,7 @@ Configurable systems developed in C use #ifdef directives to deal with variabili
 | FVWM3          | Open     |             |
 | Openlldp       | Open     |             |
 
-#### Compilation errors
+### COMPILATION ERRORS
 
 | Project | File      | Compilation error                              | Status   |
 |---------|-----------|------------------------------------------------|----------|
@@ -36,7 +36,7 @@ Configurable systems developed in C use #ifdef directives to deal with variabili
 | FreeTDS |           | Natural language text that should be a comment | Accepted |
 | FreeTDS |           | Natural language text that should be a comment | Accepted |
 
-#### Model to build the configurable systems
+### MODEL TO BUILD TEH CONFIGURABLE SYSTEMS
 
 ##### Expat
 Always enabled:
