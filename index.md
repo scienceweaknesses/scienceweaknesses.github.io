@@ -8,7 +8,7 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 
 Here's an image of a drag racer in action:
 
-![Drag Racing](technique.jpg)
+![Drag Racing](technique.jpeg)
 
 Move along.
 
