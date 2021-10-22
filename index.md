@@ -1,3 +1,4 @@
+<div class="tip" markdown="1">Have **fun!**</div>
 ## A change-centric technique to DETECT and FIX weaknesses in configurable systems
 
 ### Abstract
