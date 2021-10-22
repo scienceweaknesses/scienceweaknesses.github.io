@@ -1,0 +1,138 @@
+<html>
+<head></head>
+ 
+<h1>A change-centric technique to DETECT and FIX weaknesses in configurable systems</h2>
+
+<h3>Abstract</h3>
+Configurable systems developed in C use #ifdef directives to deal with variability and portability. Developing and evolving highly configurable systems is a complex task because developers need to deal with many configurations at the same time and weaknesses can be easily added and difficult to detect since some weaknesses belong to only a few specific configurations. This process makes the task of detecting and fixing weaknesses even more challenging because most static analysis tools are not variability-aware. In addition, to the best of our knowledge, there is a lack of studies that analyze how to automate the process of fixing weaknesses in configurable systems. We study two types of weaknesses (Null Pointer Dereference and Memory Leak) and observe a pattern used by many developers to fix them. In this work, we propose a change-centric technique to detect and fix weaknesses in configurable systems. We evaluate our proposal in 14 open projects available in the GitHub repository. To confirm the weaknesses detected and fixed, we send 12 pull requests to fix 65 Null Pointer Dereference and 5 Memory Leak. So far, experts analyzed 6 pull requests and confirmed all weaknesses reported in these patches (27 Null Pointer Dereference and 5 Memory Leak). The other pull requests are still open waiting for the developers to evaluate.
+<br></br>
+
+<img src="technique.jpeg">
+
+<table>
+<thead>
+  <tr>
+    <th>Projec</th>
+    <th>File</th>
+    <th>Compilation error</th>
+    <th>Status</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>LIbGD</td>
+    <td>gdcache.c</td>
+    <td>First argument of 'main' should be 'int'</td>
+    <td>Accepted</td>
+  </tr>
+  <tr>
+    <td>LIbGD</td>
+    <td>gdcache.c</td>
+    <td>Second argument of 'main' should be char **</td>
+    <td>Accepted</td>
+  </tr>
+  <tr>
+    <td>LIbGD</td>
+    <td></td>
+    <td>Too few argument to function</td>
+    <td>Accepted</td>
+  </tr>
+  <tr>
+    <td>FreeTDS</td>
+    <td></td>
+    <td>Natural language text that should be a comment</td>
+    <td>Accepted</td>
+  </tr>
+  <tr>
+    <td>FreeTDS</td>
+    <td></td>
+    <td>Natural language text that should be a comment</td>
+    <td>Accepted</td>
+  </tr>
+</tbody>
+</table>
+
+<br></br>
+
+
+<table>
+<thead>
+  <tr>
+    <th>Project</th>
+    <th>Status</th>
+    <th>Weaknesses</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Expat</td>
+    <td>Accepted</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Git</td>
+    <td>Accepted</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>LZ4</td>
+    <td>Accepted</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Masscan</td>
+    <td>Accepted</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>FreeTDS</td>
+    <td>Accepted</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>MemCached</td>
+    <td>Accepted</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Nanomsg</td>
+    <td>Open</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Dynomite</td>
+    <td>Open</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Dial-reference</td>
+    <td>Open</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Libsmbios</td>
+    <td>Open</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Tig</td>
+    <td>Open</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>FVWM3</td>
+    <td>Open</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Openlldp</td>
+    <td>Open</td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+
+<a href="files/dynomite/v1-b56cf6a0e51a3c1941359da44af9e432c64b2f90.csv">link text</a>
+
+
+</html>
