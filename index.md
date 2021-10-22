@@ -36,7 +36,22 @@ Configurable systems developed in C use #ifdef directives to deal with variabili
 | FreeTDS |           | Natural language text that should be a comment | Accepted |
 | FreeTDS |           | Natural language text that should be a comment | Accepted |
 
-### MODEL TO BUILD TEH CONFIGURABLE SYSTEMS
+### WEAKNESSES DETAILED
+
+
+
+<pre>               When the weaknesses were FIXED</pre>
+
+|<pre>  Weaknesses before  </pre>|<pre>  Weaknesses after  </pre>|<pre>  Weaknesses diff  </pre>|<pre>  Pull request  </pre>|
+|---------------------|-----------------------|------------------------|-------------|
+|<center>[2](files/dynomite/v1-b56cf6a0e51a3c1941359da44af9e432c64b2f90.csv)</center>|<center>[2](files/dynomite/v1-b56cf6a0e51a3c1941359da44af9e432c64b2f90.csv)</center>|<center>[0](files/dynomite/v1-b56cf6a0e51a3c1941359da44af9e432c64b2f90.csv)</center>|<center>[Accepted](files/dynomite/v1-b56cf6a0e51a3c1941359da44af9e432c64b2f90.csv)</center>|
+
+<pre>               When the weaknesses were ADDED</pre>
+|<pre>  Weaknesses before  </pre>|<pre>  Weaknesses after  </pre>|<pre>  Weaknesses diff  </pre>|
+|---------------------|-----------------------|------------------------|-------------|
+|<center>[2](files/dynomite/v1-b56cf6a0e51a3c1941359da44af9e432c64b2f90.csv)</center>|<center>[0](files/dynomite/v1-b56cf6a0e51a3c1941359da44af9e432c64b2f90.csv)</center>|<center>[2](files/dynomite/v1-b56cf6a0e51a3c1941359da44af9e432c64b2f90.csv)</center>|
+
+### MODEL TO BUILD THE CONFIGURABLE SYSTEMS
 
 We create a model to compile the configurable systems using the CFLAGS and CPPFLAGS variables according to the definitions below:
 
