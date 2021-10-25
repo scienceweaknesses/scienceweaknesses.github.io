@@ -191,7 +191,7 @@ Configurable systems developed in C use #ifdef directives to deal with variabili
     <td><a href="files/dynomite/v1-dba3e20147648fb0319310d04643516309b46cef.csv">0</a></td>
     <td><a href="files/dynomite/v1-f2e1157ad28dc8558014edd8001b4480f8c10dc2.csv">2</a></td>
     <td><a href="files/dynomite/v1-diff-f2e1157ad28dc8558014edd8001b4480f8c10dc2-dba3e20147648fb0319310d04643516309b46cef.csv">2</a></td>
-    <td><a href="https://github.com/Netflix/dynomite/commit/f2e1157ad28dc8558014edd8001b4480f8c10dc2">2015/03/23</a></td>
+    <td><a href="https://github.com/Netflix/dynomite/pull/791">2015/03/23</a></td>
   </tr>
   <tr>
     <th colspan="4" style="text-align:center">When the weaknesses were fixed</th>
