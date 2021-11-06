@@ -228,11 +228,7 @@ predicate checkedValid(Variable var, ControlFlowNode node) {
  * null literal.
  */
 predicate nullValue(Expr val) {
-  val instanceof NullValue
-  or
   callMayReturnNull(val)
-  or
-  nullValue(val.(Assignment).getRValue())
 }
 
 /**
