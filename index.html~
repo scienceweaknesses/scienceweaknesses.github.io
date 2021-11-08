@@ -1,5 +1,14 @@
 <html>
 <head>
+    <meta charset="utf-8" />
+    <!-- Make sure to load the highlight.js CSS file before the Diff2Html CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/diff2html/bundles/css/diff2html.min.css"
+    />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/diff2html/bundles/js/diff2html-ui.min.js"></script>
 <style>
 	.centertitulo {
 	  text-align:center;
@@ -40,6 +49,64 @@
 	}
 </style>
 </head>
+ <script>
+    const diffString = `diff --git a/Nullness.java b/Nullness.java
+index 0000001..0ddf2ba
+--- a/Nullness.qll
++++ b/Nullness.qll
+@@ -3 +0 @@
+ predicate nullValue(Expr val) {
+-    val instanceof NullValue
+     callMayReturnNull(val)
+-    or
+-    nullValue(val.(Assignment).getRValue())
+ }
+
+ \n\n\n
+
+ predicate mayReturnNull(Function f) {
+     f.hasGlobalOrStdName("malloc")
+     or
+     f.hasGlobalOrStdName("calloc")
+     or
+     //  f.hasGlobalName("strchr")
+     //  or
+-    //  f.hasGlobalName("strstr")
++    f.hasGlobalName("strstr")
+-    //  or
++    or
+     exists(ReturnStmt ret |
+         nullValue(ret.getExpr()) and
+         ret.getEnclosingFunction() = f
+     )
+     or
+     exists(ReturnStmt ret, Expr returned, ControlFlowNode init, LocalScopeVariable v |
+         ret.getExpr() = returned and
+         nullInit(v, init) and
+         definitionUsePair(v, init, returned) and
+         not checkedValid(v, returned) and
+         ret.getEnclosingFunction() = f
+     )
+ }`;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var targetElement = document.getElementById('myDiffElement');
+      var configuration = {
+        drawFileList: true,
+        fileListToggle: false,
+        fileListStartVisible: false,
+        fileContentToggle: false,
+        matching: 'lines',
+        outputFormat: 'side-by-side',
+        synchronisedScroll: true,
+        highlight: true,
+        renderNothingWhenEmpty: false,
+      };
+      var diff2htmlUi = new Diff2HtmlUI(targetElement, diffString, configuration);
+      diff2htmlUi.draw();
+      diff2htmlUi.highlightCode();
+    });
+  </script>
 <body style="margin:30;padding:30">
 <h1 class="centertitulo">A change-centric technique to DETECT and FIX weaknesses in Configurable Systems</h2>
 
@@ -167,20 +234,17 @@ Configurable systems developed in C use #ifdef directives to deal with variabili
     <td>Nanomsg</td>
     <td></td>
     <td><a href="https://github.com/nanomsg/nanomsg/pull/1062">Open</a></td>
-  </tr>
-    <td>FVWM3</td>
-    <td></td>
-    <td>Open</td>
-  </tr>
 </tbody>
 </table>
 <br></br><br></br>
+
+		<!--  !!!!!!!  DYNOMITE (Netflix) !!!!!!!! -->
 
 <table id="customers"  class="center" >
 <caption> Table 3 - Details of when weaknesses were added and fixed.</caption> 
 <thead>
   <tr>
-    <th colspan="4" style="text-align:center">DYNOMITE (Netflix)</th>
+    <th colspan="4" style="text-align:center;color:#7CFC00">DYNOMITE (Netflix)</th>
   </tr>
 </thead>
 <tbody>
@@ -216,5 +280,96 @@ Configurable systems developed in C use #ifdef directives to deal with variabili
   </tr>
 </tbody>
 </table>
+
+</br></br></br></br>
+		<!--  !!!!!!!  EXPAT !!!!!!!! -->
+
+<table id="customers"  class="center" >
+<caption> Table 4 - Details of when weaknesses were added and fixed.</caption> 
+<thead>
+  <tr>
+    <th colspan="4" style="text-align:center;color:#7CFC00">EXPAT</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th colspan="4" style="text-align:center">When the weaknesses were added</th>
+  </tr>
+  <tr>
+    <td>Weaknesses before</td>
+    <td>Weaknesses after</td>
+    <td>Weaknesses diff</td>
+    <td>Date</td>
+  </tr>
+  <tr>
+    <td style="text-align:right"><a href=""></a></td>
+    <td style="text-align:right"><a href=""></a></td>
+    <td style="text-align:right"><a href=""></a></td>
+    <td><a href=""></a></td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align:center">When the weaknesses were fixed</th>
+  </tr>
+  <tr>
+    <td>Weaknesses before</td>
+    <td>Weaknesses after</td>
+    <td>Weaknesses diff</td>
+    <td>Pull request</td>
+  </tr>
+  <tr>
+    <td style="text-align:right"><a href="files/expat/v1-f027055f9d5b9f90bd6cd74c85e3401ab9ab44c2.csv">1</a></td>
+    <td style="text-align:right"><a href="files/expat/v1-a76fd99bf743782bc79ce6b67b73da3109aab464.csv">1</a></td>
+    <td style="text-align:right"><a href="files/expat/v1-diff-a76fd99bf743782bc79ce6b67b73da3109aab464-f027055f9d5b9f90bd6cd74c85e3401ab9ab44c2.csv">0</a></td>
+    <td><a href="https://github.com/libexpat/libexpat/pull/406/">Accepted</a></td>
+  </tr>
+</tbody>
+</table>
+</br></br></br></br>
+		<!--  !!!!!!!  MASSCAN !!!!!!!! -->
+
+<table id="customers"  class="center" >
+<caption> Table 5 - Details of when weaknesses were added and fixed.</caption> 
+<thead>
+  <tr>
+    <th colspan="4" style="text-align:center;color:#7CFC00">MASSCAN</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <th colspan="4" style="text-align:center">When the weaknesses were added</th>
+  </tr>
+  <tr>
+    <td>Weaknesses before</td>
+    <td>Weaknesses after</td>
+    <td>Weaknesses diff</td>
+    <td>Date</td>
+  </tr>
+  <tr>
+    <td style="text-align:right"><a href="/files/masscan/v1-4407812e82b8b706f1496c931589020994ca8a82.csv">11</a></td>
+    <td style="text-align:right"><a href="/files/masscan/v1-1c974c9e317152123d1b4dc9bbc89013d67554cc.csv">12</a></td>
+    <td style="text-align:right"><a href="/files/masscan/v1-diff-4407812e82b8b706f1496c931589020994ca8a82-1c974c9e317152123d1b4dc9bbc89013d67554cc.csv">1</a></td>
+    <td><a href="https://github.com/robertdavidgraham/masscan/commit/ec0ba1818f4d4ed4b4adb6aead474b35f866c9e1">01/03/2014</a></td>
+  </tr>
+  <tr>
+    <th colspan="4" style="text-align:center">When the weaknesses were fixed</th>
+  </tr>
+  <tr>
+    <td>Weaknesses before</td>
+    <td>Weaknesses after</td>
+    <td>Weaknesses diff</td>
+    <td>Pull request</td>
+  </tr>
+  <tr>
+    <td style="text-align:right"><a href="/files/masscan/v1-4407812e82b8b706f1496c931589020994ca8a82.csv">1</a></td>
+    <td style="text-align:right"><a href="/files/masscan/v1-1c974c9e317152123d1b4dc9bbc89013d67554cc.csv">1</a></td>
+    <td style="text-align:right"><a href="/files/masscan/v1-diff-4407812e82b8b706f1496c931589020994ca8a82-1c974c9e317152123d1b4dc9bbc89013d67554cc.csv">0</a></td>
+    <td><a href="https://github.com/robertdavidgraham/masscan/pull/580">Accepted</a></td>
+  </tr>
+</tbody>
+</table>
+</br></br></br>
+    Nós fizemos a mudança abaixo para reduzir a quantidade de falso positivos e detectar apenas casos de fraquezas CWE-476 relacionadas à alocação de memória. O arquivo original Nullness.qll está disponível no <a href="https://github.com/github/codeql/blob/2c5dd2dfa35214735abed2f1ae5c9bd0b54e7333/cpp/ql/lib/semmle/code/cpp/controlflow/Nullness.qll"> repositório oficial do CodeQL</a>.
+</br></br></br>
+    <div id="myDiffElement"></div>
 </body>
 </html>

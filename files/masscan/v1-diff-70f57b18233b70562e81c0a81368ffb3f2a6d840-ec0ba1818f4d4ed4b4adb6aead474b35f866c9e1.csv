@@ -1,0 +1,1 @@
+"Returned pointer not checked","Dereferencing an untested value from a function that can return null may lead to undefined behavior.","recommendation","Value may be null; it should be checked before dereferencing.","/Projeto/masscan/src/smack1.c","1418","9","1418","11"
